@@ -7,7 +7,9 @@ let c = {
   height: 300
 };
 
-export default class App extends React.Component{
+
+
+export default class Akash extends React.Component{
 
   showContent = () => {
     a = 20;
@@ -21,7 +23,7 @@ export default class App extends React.Component{
     return(
       <div 
         style={{
-          backgroundColor: "yellow",
+          backgroundColor: a,
           width: 300,
           height: 300
         }}
