@@ -24,13 +24,6 @@ export default class StateVars extends React.Component {
   }
 
   showContent = () =>
-    // return(
-    // <div>
-    //   this is line 1
-    //   this is line 2
-    //   this is line 3
-    // </div>)
-
     <>
       layout 1
       <input />
