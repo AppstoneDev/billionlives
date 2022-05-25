@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Akash from './components/App';
 import reportWebVitals from './reportWebVitals';
+import StateVars from "./components/stateVars";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Akash />
+    <StateVars />
   </React.StrictMode>
 );
+//ASSIGNMENT 1:
+//part 1: Create an input. Type in a color and it should change the background color of a div directly
+//part2: the color of the div should change only when a button is clicked.
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
