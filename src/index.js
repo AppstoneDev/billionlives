@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ConditionalRendering from "./components/conditionalRendering";
+import Fetcher from "./components/fetcher";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ConditionalRendering />
+    <Fetcher />
   </React.StrictMode>
 );
 //ASSIGNMENT 1:
@@ -18,5 +19,8 @@ root.render(
 //part 1: calculate the duration between a component mount and unmount. 
 //part 2: change the color of a div to what the user enters in an input. The change should happen on click of the div. 
 
+//ASSIGNMENT 3:
+//part 1: use splice to delete a particular user from the list
+//part 2: lets create a login form, make an API call and validate if the login was successful.  
 
 reportWebVitals();
