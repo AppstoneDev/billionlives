@@ -9,7 +9,7 @@ let c = {
 
 
 
-export default class Akash extends React.Component{
+export default class Akash extends React.Component {
 
   showContent = () => {
     a = 20;
@@ -18,10 +18,16 @@ export default class Akash extends React.Component{
     console.log(b);
   }
 
-  render(){
+  handleChange = () => {
+    this.setState({
+      a: this.state.a + 10
+    })
+  }
+
+  render() {
     b = 200;
-    return(
-      <div 
+    return (
+      <div
         style={{
           backgroundColor: a,
           width: 300,
@@ -29,8 +35,10 @@ export default class Akash extends React.Component{
         }}
       >
         Hello world
+
+        <input onChange={this.handleChange} />
         <button onClick={this.showContent}>
-          click me 
+          click me
         </button>
         {a}
         {b}

@@ -1,4 +1,6 @@
 import React from "react";
+import Button from '@mui/material/Button';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText, IconButton, Icon } from "@mui/material";
 
 export default class Fetcher extends React.Component {
   constructor(props) {
@@ -60,11 +62,35 @@ export default class Fetcher extends React.Component {
     })
   }
 
-  showUsers = (user, index) => {
+  showUsers2 = (user, index) => {
     return (
       <div>{index} {user.first_name} {user.last_name}
         <button>X</button>
       </div>
+    )
+  }
+
+  showUsers = (user, index) => {
+    return (
+      <ListItem
+        secondaryAction={
+          <IconButton edge="end" aria-label="delete">
+            <Icon>
+              delete_forever
+            </Icon>
+          </IconButton>
+        }
+      >
+        <ListItemAvatar>
+          <Avatar
+            src={user.avatar}
+          />
+        </ListItemAvatar>
+        <ListItemText
+          primary={user.first_name}
+          secondary={user.email}
+        />
+      </ListItem>
     )
   }
 
@@ -73,12 +99,14 @@ export default class Fetcher extends React.Component {
       <div>
         hello fetcher
         <button onClick={this.getUsers}>refresh</button>
+        <List>
+          {this.state.users.map(this.showUsers)}
+        </List>
 
-        {this.state.users.map(this.showUsers)}
+        <Button variant="contained" color="error" onClick={this.handlePush}>push</Button>
+        <Button onClick={this.handlePop}>pop</Button>
+        <Button onClick={this.createUser}>create user</Button>
 
-        <button onClick={this.handlePush}>push</button>
-        <button onClick={this.handlePop}>pop</button>
-        <button onClick={this.createUser}>create user</button>
       </div>
     )
   }
