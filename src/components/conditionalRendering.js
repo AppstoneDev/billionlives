@@ -1,5 +1,8 @@
 import React from "react";
 import Lifecycle from "./lifecycle";
+import {
+  Link
+} from "react-router-dom";
 
 export default class ConditionalRendering extends React.Component {
 
@@ -27,7 +30,8 @@ export default class ConditionalRendering extends React.Component {
   render() {
     return (
       <div>
-        {this.state.show === true &&
+        <Link to="/path2">go to path 2</Link>
+        {this.state.show == true &&
           <Lifecycle
             setStartDate={this.setStartDate}
           />

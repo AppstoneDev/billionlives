@@ -12,6 +12,7 @@ export default class Fetcher extends React.Component {
   }
 
   componentDidMount() {
+    console.log("hello from fetcher")
     this.getUsers();
   }
 
@@ -19,6 +20,7 @@ export default class Fetcher extends React.Component {
     fetch("https://reqres.in/api/users?page=1&delay=3")
       .then((res) => res.json())
       .then((resJson) => {
+        // console.log(resJson)
         this.setState({
           users: resJson.data
         })
@@ -87,7 +89,7 @@ export default class Fetcher extends React.Component {
           />
         </ListItemAvatar>
         <ListItemText
-          primary={user.first_name}
+          primary={user.first_name +" "+ user.last_name}
           secondary={user.email}
         />
       </ListItem>
@@ -97,8 +99,12 @@ export default class Fetcher extends React.Component {
   render() {
     return (
       <div>
-        hello fetcher
-        <button onClick={this.getUsers}>refresh</button>
+        {/* hello fetcher
+        <button onClick={this.getUsers}>refresh</button> */}
+
+        <input />
+        {this.state.match ? "there is a match": "there is no match"}
+        
         <List>
           {this.state.users.map(this.showUsers)}
         </List>

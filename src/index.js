@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import MyRouter from "./components/router";
+import Functional from "./components/functional";
 import Fetcher from "./components/fetcher";
-import MobRes from "./components/mobres";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MobRes />
+    <Fetcher origin={"landing_page123"} isLoggedIn={false} acceptedCookies={true} />
   </React.StrictMode>
 );
+
 //ASSIGNMENT 1:
 //part 1: Create an input. Type in a color and it should change the background color of a div directly
 //part 2: the color of the div should change only when a button is clicked.
@@ -26,5 +28,9 @@ root.render(
 
 //ASSIGNMENT 4: 
 //lets continue assignment 3. But now the UI needs to be created using MUI. www.mui.com 
-//
+
+//ASSIGNMENT 5: 
+//fetch the list of users from reqres.in using a functional component and check if there 
+//is a match by using the some function
+
 reportWebVitals();
